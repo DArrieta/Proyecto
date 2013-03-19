@@ -1,0 +1,33 @@
+<h1>Listing profesores</h1>
+
+<table>
+  <tr>
+    <th>Username</th>
+    <th>Password</th>
+    <th>Nombre</th>
+    <th>Apellidos</th>
+    <th>Cedula</th>
+    <th>Email</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @profesores.each do |profesore| %>
+  <tr>
+    <td><%= profesore.username %></td>
+    <td><%= profesore.password %></td>
+    <td><%= profesore.nombre %></td>
+    <td><%= profesore.apellidos %></td>
+    <td><%= profesore.cedula %></td>
+    <td><%= profesore.email %></td>
+    <td><%= link_to 'Show', profesore %></td>
+    <td><%= link_to 'Edit', edit_profesore_path(profesore) %></td>
+    <td><%= link_to 'Destroy', profesore, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Profesore', new_profesore_path %>
